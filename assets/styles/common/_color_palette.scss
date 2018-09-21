@@ -1,0 +1,55 @@
+.albuquerque-color-palette {
+	padding: 0;
+	margin: 0;
+}
+
+.albuquerque-color-palette li {
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	width: 150px;
+	height: 125px;
+	float: left;
+	color: #fff;
+	font-weight: 600;
+}
+
+.darkBlue {
+	background-color: $darkBlue; 
+}
+
+.skyBlue {
+	background-color: $skyBlue; 
+}
+.skyBlueLighter {
+	background-color: $skyBlueLighter}
+
+/* from Peak 1 */
+.darkMaroon {
+	background-color: $darkMaroon}
+.greyGreen {
+	background-color: $greyGreen}
+.paleLightGreen {
+	background-color: $paleLightGreen}
+.pinkishBand {
+	background-color: $pinkishBand}
+.plum {
+	background-color: $plum
+}
+.fadedPlum {
+	background-color: $fadedPlum;
+}
+.sandLight {
+	background-color: $sandLight;}
+
+/* from Peak 2 */
+.brickBright {
+	background-color: $brickBright;}
+.brickDark {
+	background-color: $brickDark;}
+
+/* use as accent */
+.flowers {
+	background-color: $flowersInFront;
+}
