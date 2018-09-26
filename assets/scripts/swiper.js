@@ -1,3 +1,4 @@
+/* jshint ignore:start */
 /**
  * Swiper 4.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -9,7 +10,6 @@
  *
  * Released on: September 14, 2018
  */
-
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
@@ -456,6 +456,7 @@
     var events = ['webkitTransitionEnd', 'transitionend'];
     var dom = this;
     var i;
+    /*jshint -W040 */
     function fireCallBack(e) {
       /* jshint validthis:true */
       if (e.target !== this) { return; }
@@ -7973,3 +7974,4 @@
   return Swiper;
 
 })));
+/* jshint ignore:end */
