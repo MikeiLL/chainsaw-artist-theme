@@ -17,7 +17,7 @@ global $projects_loop;
 if ( empty( $projects_loop['columns'] ) )
 	$projects_loop['columns'] = apply_filters( 'projects_loop_columns', 2 );
 
-get_header( 'projects' ); ?>
+//get_header( 'projects' ); ?>
 
 	<?php
 		/**
