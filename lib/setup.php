@@ -86,6 +86,7 @@ function display_sidebar() {
     is_404(),
     is_front_page(),
     is_page_template('template-custom.php'),
+    is_archive('project'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);
@@ -102,5 +103,10 @@ function assets() {
   }
 
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+
+  wp_register_script('sage/swiper-js', Assets\asset_path('scripts/swiper.js'), [], null, false);
+  if (is_archive('project')){
+      wp_enqueue_script('sage/swiper-js');
+  }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

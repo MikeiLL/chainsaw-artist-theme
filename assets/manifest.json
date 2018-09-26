@@ -17,6 +17,11 @@
         "scripts/customizer.js"
       ]
     },
+    "swiper.js": {
+      "files": [
+        "scripts/swiper.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     }
