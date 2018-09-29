@@ -15,3 +15,4 @@ Sage is a WordPress starter theme based on HTML5 Boilerplate, gulp, Bower, and B
 
 * https://codecanyon.net/item/portfolio-manager-pro-wordpress-responsive-portfolio-gallery
     * Use shortcode ``[mz_frontpage_gallery]` to display gallery.
+* https://github.com/MikeiLL/mz-product-archive
