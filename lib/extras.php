@@ -104,8 +104,10 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 // Display Front Page Gallery
 function mz_noahkenin_add_frontpage_gallery() {
   $args = array(
-    'post_type' => 'otw_pm_portfolio'
+    'post_type' => 'portfolio'
   );
+  var_dump(get_post_type_archive_link( 'portfolio' ));
+  //var_dump( get_intermediate_image_sizes() );
   $gallery_results = new \WP_Query($args);
   $result = '<div class="gallery_wrapper">';
   $count = 0;
@@ -113,15 +115,14 @@ function mz_noahkenin_add_frontpage_gallery() {
   if( $gallery_results->have_posts() ):
       while( $gallery_results->have_posts() ): $gallery_results->the_post();
         // If we don't have an image, continue, at least for now until we support video or other format.
-        if (empty(unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'])) continue;
         if ($count == 0):
-          $result .= '<div style="height:500px;background-size:cover;background-image:url('. unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'] . ')"></div>';
+          $result .= '<div style="height:500px;background-size:cover;background-image:url('. get_the_post_thumbnail_url($post->ID, 'large') . ')"></div>';
         else:
           if ($count == 1):
             $result .= '  <div class="container">';
             $result .= '    <div class="row">';
           endif;
-          $result .= '        <div class="col" style="height:120px;background-size:cover;background-image:url(' . unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'] . ')"></div>';
+          $result .= '        <div class="col" style="height:120px;background-size:cover;background-image:url(' . get_the_post_thumbnail_url($post->ID, 'thumbnail') . ')"></div>';
           if ($count == 4):
             $result .= '    </div>';
             $result .= '  </div>';
@@ -137,4 +138,11 @@ function mz_noahkenin_add_frontpage_gallery() {
 }
 add_shortcode('mz_frontpage_gallery', __NAMESPACE__ . '\\mz_noahkenin_add_frontpage_gallery');
 
+// Dequeue Projects Styles and Scripts
+function wp_mz_67472455(){
+  wp_dequeue_style( 'projects-slick-theme' );
+  wp_dequeue_style( 'projects-slick-css' );
+  wp_dequeue_script( 'projects-slick' );
+}
+add_action( 'wp_print_styles', __NAMESPACE__ . '\\wp_mz_67472455', 100 );
 

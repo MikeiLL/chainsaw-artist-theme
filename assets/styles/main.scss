@@ -3,6 +3,7 @@
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 @import "../../bower_components/bootstrap/scss/bootstrap.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
 @import "common/global";
@@ -13,6 +14,8 @@
 @import "components/forms";
 @import "components/grid";
 @import "components/swiper";
+@import "components/slick";
+@import "components/slick-theme";
 @import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/sidebar";
