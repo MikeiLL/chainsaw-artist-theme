@@ -101,3 +101,40 @@ if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
 add_filter('woocommerce_show_page_title', '__return_false');
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 
+// Display Front Page Gallery
+function mz_noahkenin_add_frontpage_gallery() {
+  $args = array(
+    'post_type' => 'otw_pm_portfolio'
+  );
+  $gallery_results = new \WP_Query($args);
+  $result = '<div class="gallery_wrapper">';
+  $count = 0;
+  global $post;
+  if( $gallery_results->have_posts() ):
+      while( $gallery_results->have_posts() ): $gallery_results->the_post();
+        // If we don't have an image, continue, at least for now until we support video or other format.
+        if (empty(unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'])) continue;
+        if ($count == 0):
+          $result .= '<div style="height:500px;background-size:cover;background-image:url('. unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'] . ')"></div>';
+        else:
+          if ($count == 1):
+            $result .= '  <div class="container">';
+            $result .= '    <div class="row">';
+          endif;
+          $result .= '        <div class="col" style="height:120px;background-size:cover;background-image:url(' . unserialize(get_post_meta(get_the_ID())['otw_pm_meta_data'][0])['img_url'] . ')"></div>';
+          if ($count == 4):
+            $result .= '    </div>';
+            $result .= '  </div>';
+          endif;
+        endif;
+        $count++;
+        if ($count == 5) break;
+      endwhile;
+  endif;
+  wp_reset_postdata();
+  $result .= "</div>";
+  return $result;
+}
+add_shortcode('mz_frontpage_gallery', __NAMESPACE__ . '\\mz_noahkenin_add_frontpage_gallery');
+
+
