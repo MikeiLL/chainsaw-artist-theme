@@ -16,7 +16,7 @@
                     <path d="M497.442,88.274L480.322,88.274L480.322,84.232C479.53,78.103 477.535,72.608 474.338,67.746C471.141,62.885 467.033,59.187 462.014,56.65L462.014,88.274L444.894,88.274L444.894,37.628L452.899,37.549C463.625,37.444 472.766,40.693 480.322,47.298L480.322,37.549L497.442,37.549L497.442,88.274Z" style="fill-rule:nonzero;"/>
                 </g>
             </g>
-        </svg>
+        </svg> <!-- <span class="brand__sculpture">Sculpture</span> -->
       </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,7 @@
          ]);
       endif;
        ?>
+
     </nav>
   </div>
 </header>
