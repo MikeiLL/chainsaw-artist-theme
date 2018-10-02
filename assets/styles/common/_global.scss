@@ -1,1 +1,7 @@
+body {
+	background-color: $grayGreen2 !important;
+}
 
+p:empty {
+	display: none;
+}

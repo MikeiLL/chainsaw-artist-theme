@@ -46,6 +46,7 @@ if ( empty( $projects_loop['columns'] ) )
 				 */
 				//do_action( 'projects_before_loop' );
 			?>
+
 <div class="swiper-container gallery-top">
 
 			<?php projects_project_loop_start(); ?>

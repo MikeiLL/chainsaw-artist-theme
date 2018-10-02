@@ -1,0 +1,24 @@
+nav.navbar-expand-md {
+	display:flex;
+	flex-flow: row !important;
+	justify-content: space-between !important;
+}
+
+[id*="bs4navbar"] {
+	display: flex;
+	justify-content: flex-end;
+}
+
+/*ul menu-main-menu*/.navbar-nav {
+	align-self: flex-end;
+	margin-right: 0 !important;
+}
+
+.brand__sculpture {
+	color: $black;
+	font-size: 2rem;
+	
+	&:hover {
+		color: inherit;
+	};
+}

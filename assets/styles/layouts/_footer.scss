@@ -1,0 +1,48 @@
+.footer {
+	display: block;
+	height: 200px;
+	overflow: hidden;
+
+}
+
+	.footer__contact-wrapper {
+		display: flex;
+		width: 100%;
+	}
+
+	.footer__contact-list {
+		display: flex;
+		flex-flow: column;
+		list-style-type: none;
+		width: 100%;
+	}
+
+	.footer__icon-email {
+		height: 50px;
+	}
+
+	.footer__icon-phone {
+		height: 50px;
+	}
+
+.footer__sub-footer {
+	background-color: #ccc;
+	height: 50px;
+	width: 100%;
+}
+
+	.footer__copyright-name {
+		font-size: .75rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		width: 100%;
+	}
+
+@media (min-width:992px) {
+	.footer__contact-list {
+		flex-flow: row;
+		justify-content: space-around;
+	}
+}	
