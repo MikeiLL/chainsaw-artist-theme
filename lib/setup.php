@@ -105,8 +105,12 @@ function assets() {
   wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 
   wp_register_script('sage/swiper-js', Assets\asset_path('scripts/swiper.js'), [], null, false);
+  wp_register_script('sage/slick-js', Assets\asset_path('scripts/slick.js'), [], null, false);
   if (is_archive('project')){
       wp_enqueue_script('sage/swiper-js');
+  }
+  if (is_archive('portfolio')){
+      wp_enqueue_script('sage/slick-js');
   }
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

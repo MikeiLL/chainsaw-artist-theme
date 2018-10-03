@@ -24,6 +24,11 @@
     },
     "jquery.js": {
       "bower": ["jquery"]
+    },
+    "slick.js": {
+      "files": [
+        "scripts/slick.js"
+      ]
     }
   },
   "config": {
