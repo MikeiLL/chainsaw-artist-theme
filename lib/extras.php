@@ -106,26 +106,31 @@ function mz_noahkenin_add_frontpage_gallery() {
   $args = array(
     'post_type' => 'portfolio'
   );
-  var_dump(get_post_type_archive_link( 'portfolio' ));
+  //var_dump(get_post_type_archive_link( 'portfolio' ));
   //var_dump( get_intermediate_image_sizes() );
   $gallery_results = new \WP_Query($args);
-  $result = '<div class="gallery_wrapper">';
+  $result = '';
   $count = 0;
-  global $post;
+  global $post; ?>
+  <?php
   if( $gallery_results->have_posts() ):
       while( $gallery_results->have_posts() ): $gallery_results->the_post();
         // If we don't have an image, continue, at least for now until we support video or other format.
         if ($count == 0):
-          $result .= '<div style="height:500px;background-size:cover;background-image:url('. get_the_post_thumbnail_url($post->ID, 'large') . ')"></div>';
+          $result .= '<div class="row">';
+          $result .= '  <div class="hero-wrapper"><img class="hero__main-img" src="'. get_the_post_thumbnail_url($post->ID, 'large') . '"/></div>';
+          $result .= '</div>';
         else:
           if ($count == 1):
-            $result .= '  <div class="container">';
-            $result .= '    <div class="row">';
+            $result .= '<div class="hp-gallery-thumbs-wrapper row">';
           endif;
-          $result .= '        <div class="col" style="height:120px;background-size:cover;background-image:url(' . get_the_post_thumbnail_url($post->ID, 'thumbnail') . ')"></div>';
+          $result .= '  <div class="hp-gallery-thumb">';
+          $result .= '    <div class="hp-gallery-thumb__content" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'thumbnail') . ')">';
+          $result   .= '       <h3 class="project-name">'. get_the_title() . '</h3>';
+          $result .= '    </div>';
+          $result .= '  </div>';
           if ($count == 4):
-            $result .= '    </div>';
-            $result .= '  </div>';
+            $result .= '</div>';
           endif;
         endif;
         $count++;
