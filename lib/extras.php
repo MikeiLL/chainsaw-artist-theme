@@ -107,7 +107,7 @@ function mz_noahkenin_add_frontpage_gallery() {
     'post_type' => 'portfolio'
   );
   //var_dump(get_post_type_archive_link( 'portfolio' ));
-  var_dump( get_intermediate_image_sizes() );
+  // var_dump( get_intermediate_image_sizes() );
   $gallery_results = new \WP_Query($args);
   $result = '';
   $count = 0;
