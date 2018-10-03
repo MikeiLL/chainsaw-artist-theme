@@ -107,7 +107,7 @@ function mz_noahkenin_add_frontpage_gallery() {
     'post_type' => 'portfolio'
   );
   //var_dump(get_post_type_archive_link( 'portfolio' ));
-  //var_dump( get_intermediate_image_sizes() );
+  var_dump( get_intermediate_image_sizes() );
   $gallery_results = new \WP_Query($args);
   $result = '';
   $count = 0;
@@ -125,7 +125,7 @@ function mz_noahkenin_add_frontpage_gallery() {
             $result .= '<div class="hp-gallery-thumbs-wrapper row">';
           endif;
           $result .= '  <div class="hp-gallery-thumb">';
-          $result .= '    <div class="hp-gallery-thumb__content" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'thumbnail') . ')">';
+          $result .= '    <div class="hp-gallery-thumb__content" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ')">';
           $result   .= '       <h3 class="project-name">'. get_the_title() . '</h3>';
           $result .= '    </div>';
           $result .= '  </div>';
