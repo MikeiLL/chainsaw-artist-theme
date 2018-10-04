@@ -14,15 +14,15 @@
           }
         ?>
         <?php
-        if(get_field('skills_used'))
+        if(get_field('challenges'))
           {
-            echo '<p><strong>Skills Used</strong>: ' . get_field('skills_used') . '</p>';
+            echo '<p><strong>Challenges</strong>: ' . get_field('challenges') . '</p>';
           }
         ?>
         <?php
-        if(get_field('client'))
+        if(get_field('skills_used'))
           {
-            echo '<p><strong>Client</strong>: ' . get_field('client') . '</p>';
+            echo '<p><strong>Skills Used</strong>: ' . get_field('skills_used') . '</p>';
           }
         ?>
         <?php
@@ -32,15 +32,15 @@
           }
         ?>
         <?php
-        if(get_field('challenges'))
+        if(get_field('lessons_learned'))
           {
-            echo '<p><strong>Challenges</strong>: ' . get_field('challenges') . '</p>';
+            echo '<p><strong>Lessons Learned</strong>: ' . get_field('lessons_learned') . '</p>';
           }
         ?>
         <?php
-        if(get_field('lessons_learned'))
+        if(get_field('client'))
           {
-            echo '<p><strong>Materials</strong>: ' . get_field('lessons_learned') . '</p>';
+            echo '<p><strong>Client</strong>: ' . get_field('client') . '</p>';
           }
         ?>
         <?php // get_template_part('templates/content', 'portfolio'); ?>
