@@ -1,3 +1,4 @@
+<h1 class="page-title">Portfolio</h1>
 <div class="portfolio-gallery">
 <?php while (have_posts()) : the_post(); ?>
   <div class="container" style="min-height:500px;">
