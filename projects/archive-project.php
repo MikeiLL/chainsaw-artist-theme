@@ -35,7 +35,7 @@ if ( empty( $projects_loop['columns'] ) )
 		<?php endif; ?>
 
 		<?php do_action( 'projects_archive_description' ); ?>
-		<?php do_action( 'projects_project_categories' ); ?>
+		<?php // do_action( 'projects_project_categories' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 

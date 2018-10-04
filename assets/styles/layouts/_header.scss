@@ -17,8 +17,13 @@ nav.navbar-expand-md {
 .brand__sculpture {
 	color: $black;
 	font-size: 2rem;
-	
+
 	&:hover {
 		color: inherit;
 	};
+}
+
+.navbar .brand, .navbar .page-title {
+  font-size: 1.5rem;
+  color: black;
 }
