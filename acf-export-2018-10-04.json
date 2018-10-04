@@ -97,6 +97,25 @@
                 "prepend": "",
                 "append": "",
                 "maxlength": ""
+            },
+            {
+                "key": "field_5bb564d62ce6f",
+                "label": "Introduction",
+                "name": "introduction",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
             }
         ],
         "location": [
