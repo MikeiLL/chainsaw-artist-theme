@@ -123,21 +123,22 @@ body.home .page-header {
 .hp-archive-gallery__icon {
 	display: block;
 	margin: 0 auto;
-	width: 65%;
 }
-/*
+
 .hp-gallery__icon {
-	width: 70%;
+	width: 65%;
 }
 
 .hp-archive__icon {
-	width: 60%;
-}
-*/
+	position: relative;
+	top: 12px;
+	width: 55%;
+} 
+
 .hp-archive-gallery__title {
 	color: $black;
-	font-size: 2rem;
-	font-family: 'ABeeZee', sans-serif;
+	font-size: 7vw;
+	font-family: 'Aclonica', sans-serif;
 	margin-top: auto;
 	text-align: center;
 } 
@@ -145,6 +146,9 @@ body.home .page-header {
 @media only screen and (min-width: 576px) {
 	.hp-archive-gallery {
 		width:40%;
+	}
+	.hp-archive-gallery__title {
+		font-size: 5.5vw;
 	}
 }
 
@@ -156,13 +160,26 @@ body.home .page-header {
 	.project-name {
 		font-size: 1.4rem;
 	}
+	.hp-archive-gallery__title {
+		font-size: 5.5vw;
+	}
 }
 
 @media only screen and (min-width: 992px) {
 	.hp-archive-gallery {
-		width:40%;
+		width:30%;
 	}
 	.project-name {
 		font-size: 2rem;
+	}
+	.hp-archive-gallery__title {
+		font-size: 2rem;
+	}
+	.hp-gallery__icon {
+		width: 75%;
+	}
+
+	.hp-archive__icon {
+		width: 65%;
 	}
 }
