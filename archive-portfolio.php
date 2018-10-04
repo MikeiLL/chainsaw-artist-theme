@@ -1,8 +1,53 @@
 <div class="portfolio-gallery">
 <?php while (have_posts()) : the_post(); ?>
-  <div><?php the_title( true ); ?></div>
-  <?php //get_template_part('templates/page', 'header'); ?>
-  <?php //get_template_part('templates/content', 'portfolio'); ?>
+  <div class="container" style="height:500px;">
+    <div class="row" style="height:500px;">
+      <div class="col-md" style="background-size:cover;background-image:url('<?php echo get_the_post_thumbnail_url($post->ID, 'medium'); ?>')">
+
+      </div>
+      <div class="col-md">
+        <h2><?php the_title( ); ?></h2>
+        <?php
+        if(get_field('introduction'))
+          {
+            echo '<blockquote>' . get_field('introduction') . '</blockquote>';
+          }
+        ?>
+        <?php
+        if(get_field('skills_used'))
+          {
+            echo '<p><strong>Skills Used</strong>: ' . get_field('skills_used') . '</p>';
+          }
+        ?>
+        <?php
+        if(get_field('client'))
+          {
+            echo '<p><strong>Client</strong>: ' . get_field('client') . '</p>';
+          }
+        ?>
+        <?php
+        if(get_field('materials'))
+          {
+            echo '<p><strong>Materials</strong>: ' . get_field('materials') . '</p>';
+          }
+        ?>
+        <?php
+        if(get_field('challenges'))
+          {
+            echo '<p><strong>Challenges</strong>: ' . get_field('challenges') . '</p>';
+          }
+        ?>
+        <?php
+        if(get_field('lessons_learned'))
+          {
+            echo '<p><strong>Materials</strong>: ' . get_field('lessons_learned') . '</p>';
+          }
+        ?>
+        <?php // get_template_part('templates/content', 'portfolio'); ?>
+      </div>
+    </div>
+  </div>
+
 <?php endwhile; ?>
 
 </div>
