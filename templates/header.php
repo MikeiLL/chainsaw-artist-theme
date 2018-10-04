@@ -1,8 +1,7 @@
 <header class="banner">
   <div class="container">
     <nav class="navbar navbar-expand-md navbar-light bg-faded">
-       <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?>
-      </a>
+       <a class="brand" href="<?= esc_url(home_url('/')); ?>"><?php bloginfo('name'); ?></a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>
        </button>
