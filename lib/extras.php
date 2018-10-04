@@ -194,3 +194,4 @@ return <<<EOL
 EOL;
 }
 add_shortcode('large_frontpage_buttons', __NAMESPACE__ . '\\mz_noahkenin_large_frontpage_buttons');
+
