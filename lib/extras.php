@@ -173,7 +173,7 @@ return <<<EOL
             c-0.067-0.065-0.157-0.106-0.257-0.106h-0.149c-0.189,0-0.339,0.144-0.361,0.328c-0.458,0.048-0.798,0.213-0.798,0.413
             C11.627,10.393,12.106,10.584,12.697,10.584z"style=fill:#030104 /></g></g></g></svg>
 
-            <br><h2 class="hp-archive-gallery__title">Gallery</h2>
+            <br><h2 class="hp-archive-gallery__title">Portfolio</h2>
         </div>
       {$link_closer}
     </div>
@@ -186,7 +186,7 @@ return <<<EOL
           l7.197-7.197L198.197,93.75l-17.803,17.803h-18.787l27.197-27.197L178.197,73.75l-37.803,37.803h-26.787L179.5,45.66
           L245.394,111.553z M456,126.553v113H55v-113H456z M48,471.553H31v-17h17V471.553z M480,471.553h-17v-17h17V471.553z M496,439.553
           h-1h-47H63H16h-1v-353h102.394l-25,25H40v143h431v-143H266.606l-25-25H496V439.553z"/><path d="M40,414.553h431v-143H40V414.553z M55,286.553h401v113H55V286.553z"/><path d="M327,159.553H184v47h143V159.553z M312,191.553H199v-17h113V191.553z"/><path d="M184,366.553h143v-47H184V366.553z M199,334.553h113v17H199V334.553z"/></g></svg>
-          <br><h2 class="hp-archive-gallery__title">Archive</h2>
+          <br><h2 class="hp-archive-gallery__title">Archives</h2>
         </div>
       {$link_closer}
     </div>
