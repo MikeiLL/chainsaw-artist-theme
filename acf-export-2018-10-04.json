@@ -23,25 +23,6 @@
                 "delay": 0
             },
             {
-                "key": "field_5bb5113c77d8a",
-                "label": "Client",
-                "name": "client",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
                 "key": "field_5bb5117777d8b",
                 "label": "Skills Used",
                 "name": "skills_used",
@@ -102,6 +83,25 @@
                 "key": "field_5bb563a671548",
                 "label": "Lessons Learned",
                 "name": "lessons_learned",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5bb5113c77d8a",
+                "label": "Client",
+                "name": "client",
                 "type": "text",
                 "instructions": "",
                 "required": 0,
