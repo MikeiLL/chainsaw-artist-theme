@@ -1,8 +1,8 @@
 <div class="portfolio-gallery">
 <?php while (have_posts()) : the_post(); ?>
-  <div class="container" style="height:500px;">
-    <div class="row" style="height:500px;">
-      <div class="col-md" style="background-size:cover;background-image:url('<?php echo get_the_post_thumbnail_url($post->ID, 'medium'); ?>')">
+  <div class="container" style="min-height:500px;">
+    <div class="row" style="min-height:500px;">
+      <div class="col-md" style="min-height:500px;background-size:cover;background-image:url('<?php echo get_the_post_thumbnail_url($post->ID, 'medium'); ?>')">
 
       </div>
       <div class="col-md">
