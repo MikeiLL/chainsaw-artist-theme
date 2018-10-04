@@ -173,7 +173,7 @@ return <<<EOL
             c-0.067-0.065-0.157-0.106-0.257-0.106h-0.149c-0.189,0-0.339,0.144-0.361,0.328c-0.458,0.048-0.798,0.213-0.798,0.413
             C11.627,10.393,12.106,10.584,12.697,10.584z"style=fill:#030104 /></g></g></g></svg>
 
-            <br><h2 class="hp-archive-gallery__title">Gallery</h2>
+            <br><h2 class="hp-archive-gallery__title">Portfolio</h2>
         </div>
       {$link_closer}
     </div>
@@ -194,3 +194,19 @@ return <<<EOL
 EOL;
 }
 add_shortcode('large_frontpage_buttons', __NAMESPACE__ . '\\mz_noahkenin_large_frontpage_buttons');
+
+// Customize our Archive Queries
+function mz_noah_custom_query( $query ) {
+    if ($query->is_post_type_archive === true) {
+      if ($query->query['post_type'] == 'portfolio'):
+        if (is_front_page()):
+          $query->set( 'posts_per_page', '5' );
+        else:
+          $query->set( 'posts_per_page', '8' );
+        endif;
+      elseif ($query->query['post_type'] == 'project' ):
+        $query->set( 'posts_per_page', '60' );
+      endif;
+    }
+}
+add_filter( 'pre_get_posts', __NAMESPACE__ . '\\mz_noah_custom_query' );
