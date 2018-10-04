@@ -4,6 +4,25 @@
         "title": "Portfolio Fields",
         "fields": [
             {
+                "key": "field_5bb564d62ce6f",
+                "label": "Introduction",
+                "name": "introduction",
+                "type": "wysiwyg",
+                "instructions": "This is the main content that shows before the other fields.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
                 "key": "field_5bb5113c77d8a",
                 "label": "Client",
                 "name": "client",
@@ -97,25 +116,6 @@
                 "prepend": "",
                 "append": "",
                 "maxlength": ""
-            },
-            {
-                "key": "field_5bb564d62ce6f",
-                "label": "Introduction",
-                "name": "introduction",
-                "type": "textarea",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "maxlength": "",
-                "rows": "",
-                "new_lines": ""
             }
         ],
         "location": [
@@ -128,7 +128,7 @@
             ]
         ],
         "menu_order": 0,
-        "position": "normal",
+        "position": "acf_after_title",
         "style": "default",
         "label_placement": "top",
         "instruction_placement": "label",
