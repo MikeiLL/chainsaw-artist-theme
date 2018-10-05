@@ -10,6 +10,7 @@
 @import "common/variables";
 @import "common/color_palette";
 @import "common/typography";
+@import "common/mixins";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
@@ -25,3 +26,4 @@
 @import "layouts/posts";
 @import "layouts/tinymce";
 @import "layouts/front-page";
+@import "layouts/archive";

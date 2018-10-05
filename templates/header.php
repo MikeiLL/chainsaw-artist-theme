@@ -2,7 +2,7 @@
   <div class="container">
     <nav class="navbar navbar-expand-md navbar-light bg-faded">
        <a class="brand" href="<?= esc_url(home_url('/')); ?>"><span class="sr-only sr-only-focusable"><?php bloginfo('name'); ?></span>
-        <svg width="200px" height="80px" viewBox="0 0 724 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+        <svg class="brand__name" width="200px" height="80px" viewBox="0 0 724 99" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
             <g transform="matrix(1,0,0,1,-38.5598,-8.16039)">
                 <g transform="matrix(1.55543,0,0,1.55543,-11.8911,-34.0917)">
                     <path d="M95.762,88.274L75.155,88.274L75.155,83.36C74.151,75.963 71.734,69.345 67.903,63.506C64.073,57.667 59.119,53.216 53.042,50.151L53.042,88.274L32.435,88.274L32.435,27.246L42.105,27.166C55.103,27.061 66.12,30.971 75.155,38.897L75.155,27.166L95.762,27.166L95.762,88.274Z" style="fill-rule:nonzero;"/>
@@ -16,7 +16,8 @@
                     <path d="M497.442,88.274L480.322,88.274L480.322,84.232C479.53,78.103 477.535,72.608 474.338,67.746C471.141,62.885 467.033,59.187 462.014,56.65L462.014,88.274L444.894,88.274L444.894,37.628L452.899,37.549C463.625,37.444 472.766,40.693 480.322,47.298L480.322,37.549L497.442,37.549L497.442,88.274Z" style="fill-rule:nonzero;"/>
                 </g>
             </g>
-        </svg> <!-- <span class="brand__sculpture">Sculpture</span> -->
+        </svg>
+        <span class="brand__sculpture">  Sculpture</span><!-- <span class="brand__sculpture">Sculpture</span> -->
       </a>
        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
          <span class="navbar-toggler-icon"></span>

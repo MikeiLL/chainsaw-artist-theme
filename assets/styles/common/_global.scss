@@ -1,7 +1,17 @@
 body {
+	//background-color: lighten($grayGreen2, 10) !important;
 	background-color: $grayGreen2 !important;
 }
 
 p:empty {
 	display: none;
+}
+
+p {
+	//color: rgba(0, 0, 0, 0.8)
+	color: $whiteTrans;
+}
+
+strong {
+	color: $accent;
 }

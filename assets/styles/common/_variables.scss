@@ -3,7 +3,8 @@ $main-sm-columns:       12;
 $sidebar-sm-columns:    4;
 
 $white: #fff; /* temp */
-$black: #000; /* temp */
+$black: #222;
+$whiteTrans: rgba( 255, 255, 255, 0.9);
 
 $darkBlue: #20549E;
 $skyBlue: #1366B6;
@@ -14,8 +15,9 @@ $darkMaroon: #280604;
 $grayGreen: #64777A; /* interesting color, be sure and use! */
 $grayGreen2: #68888F; /* same as above */
 $pinkishBand: #AE9A91;
+$plumDark: #2D2F4C;
 $plum: #3B435C;
-$fadedPlum: #4F576D;
+$plumFaded: #4F576D;
 $sandLight: #DFD0C6;
 
 /* form Peak 2 */

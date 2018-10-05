@@ -129,12 +129,12 @@ function mz_noahkenin_add_frontpage_gallery() {
           $result   .= '       <h3 class="project-name">'. get_the_title() . '</h3>';
           $result .= '    </div>';
           $result .= '  </div>';
-          if ($count == 4):
+          if ($count == 5):
             $result .= '</div></a>';
           endif;
         endif;
         $count++;
-        if ($count == 5) break;
+        if ($count == 6) break;
       endwhile;
   endif;
   wp_reset_postdata();

@@ -1,3 +1,16 @@
+.banner {
+	background-color: $plumDark;
+	height: 65px;
+	overflow: none;
+	@include toms-box-shadow;
+	box-shadow: 0px 0 10px 0 rgba( 0, 0, 0, 0.65);
+}
+
+nav {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
 nav.navbar-expand-md {
 	display:flex;
 	flex-flow: row !important;
@@ -5,8 +18,32 @@ nav.navbar-expand-md {
 }
 
 [id*="bs4navbar"] {
-	display: flex;
+	display: flex; 
 	justify-content: flex-end;
+
+	position: relative; /* TEMP LOGO PLACEMENT PROB */
+	top: -22px; /* TEMP LOGO PLACEMENT PROB */
+}
+/*ul*/.navbar-nav li:first-of-type {
+	margin: 0 20px;
+}
+
+.brand {
+	text-decoration: none;
+	position: relative; /* TEMP LOGO PLACEMENT PROB */
+	top: -5px; /* TEMP LOGO PLACEMENT PROB */
+	&:hover {
+		text-decoration: none;
+		color: $whiteTrans !important;
+	};
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color:$whiteTrans !important;
+	font-size: 1.6rem;
+
+	font-size: 2rem;
+	font-family: 'Niramit', sans-serif;
 }
 
 /*ul menu-main-menu*/.navbar-nav {
@@ -14,9 +51,22 @@ nav.navbar-expand-md {
 	margin-right: 0 !important;
 }
 
+/*svg*/.brand__name {
+	//fill: $white;
+	fill: rgba( 255, 255, 255, 0.8);
+	width: 280px;
+
+	top: -16px; /* TEMP */
+    position: relative; /* TEMP */
+}
+ 
 .brand__sculpture {
-	color: $black;
-	font-size: 2rem;
+	color: $whiteTrans;
+	font-family: 'Lato', sans-serif;
+	font-size: 47px;
+	font-variant: small-caps;
+	top: -4px;
+	position: relative;
 
 	&:hover {
 		color: inherit;
@@ -27,3 +77,4 @@ nav.navbar-expand-md {
   font-size: 1.5rem;
   color: black;
 }
+
