@@ -109,7 +109,7 @@ function assets() {
   if (is_archive('project')){
       wp_enqueue_script('sage/swiper-js');
   }
-  if (is_archive('portfolio') || is_project() ){
+  if (is_archive('portfolio') || is_singular('project') ){
       wp_enqueue_script('sage/slick-js');
   }
 }
