@@ -18,7 +18,7 @@ nav.navbar-expand-md {
 }
 
 [id*="bs4navbar"] {
-	display: flex; 
+	display: flex;
 	justify-content: flex-end;
 
 	position: relative; /* TEMP LOGO PLACEMENT PROB */
@@ -54,12 +54,12 @@ nav.navbar-expand-md {
 /*svg*/.brand__name {
 	//fill: $white;
 	fill: rgba( 255, 255, 255, 0.8);
-	width: 280px;
-
+	width: 420px;
+  height: auto;
 	top: -16px; /* TEMP */
-    position: relative; /* TEMP */
+  position: relative; /* TEMP */
 }
- 
+
 .brand__sculpture {
 	color: $whiteTrans;
 	font-family: 'Lato', sans-serif;
