@@ -77,13 +77,17 @@
 	padding: 5% 0;
 	display: flex;
 	flex-flow: row;
+	width: 100%;
 }
 
 
 .hp-info__img-container {
-	border: 0px solid $white;
 	flex-basis: 25%;
-	display: flex;
+	
+}
+
+.hp-info__text-container {
+	flex-basis: 50%;
 }
 
 .hp-info__img-container--chainsaw {
@@ -91,17 +95,27 @@
 }
 
 .hp-info__img-container--desert {
-	justify-content: center;
+	display: block;
+
 	}
 
-	.hp-info__icon--chainsaw {
-		width:65%;
+.hp-info__img-container--desert-2 {
+	display: block;
+
+	}	
+
+	.hp-info__image--desert {
+		width: 80%;
+		margin-left: auto;
+	    margin-top: 0px;
+		display: block;
+		margin-top: 20%;
 	}
-	.hp-info__icon--chainsaw path {
-		fill: $brickBright;
-	}
-	.hp-info__icon--desert {
-		flex-basis: 50%; 
+	
+	.hp-info__image--desert-2 {
+		width: 70%;
+		margin-right: auto;
+		display: block;
 	}
 
 .hp-info__text {
