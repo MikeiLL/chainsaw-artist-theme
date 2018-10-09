@@ -74,10 +74,10 @@
   // Load Events
   $(document).ready(UTIL.loadEvents);
   $(".portfolio-gallery").slick({
-
-    // normal options...
     infinite: true,
     dots: true,
+    initialSlide: noahkenin.page
   });
+  console.log(noahkenin.page);
 
 })(jQuery); // Fully reference jQuery after this point.
