@@ -200,7 +200,7 @@ add_shortcode('large_frontpage_buttons', __NAMESPACE__ . '\\mz_noahkenin_large_f
 
 // Create a function to excplude some categories from the main query
 function mz_modify_query_only_with_image( $query ) {
-  if (is_archive('portfolio') || is_archive('project')):
+  if ((is_archive('portfolio') || is_archive('project')) && (array_key_exists('post_type', $query->query))):
     if (($query->query['post_type'] === 'portfolio') || ($query->query['post_type'] === 'project')):
       $query->set( 'meta_key', '_thumbnail_id' );
     endif;
