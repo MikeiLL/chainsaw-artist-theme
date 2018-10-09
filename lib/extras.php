@@ -122,15 +122,17 @@ function mz_noahkenin_add_frontpage_gallery() {
           $result .= '</div>';
         else:
           if ($count == 1):
-            $result .= '<a href="' . get_post_type_archive_link( "portfolio" ) . '"><div class="hp-gallery-thumbs-wrapper row">';
+            $result .= '<div class="hp-gallery-thumbs-wrapper row">';
           endif;
           $result .= '  <div class="hp-gallery-thumb" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ')">';
-          $result .= '    <div class="hp-gallery-thumb__content">';
-          $result   .= '       <h3 class="project-name">'. get_the_title() . '</h3>';
-          $result .= '    </div>';
+          $result .= '    <a href="' . get_post_type_archive_link( "portfolio" ) . '">';
+          $result .= '        <div class="hp-gallery-thumb__content">';
+          $result .= '          <h3 class="project-name">'. get_the_title() . '</h3>';
+          $result .= '        </div>';
+          $result .= '    </a>';
           $result .= '  </div>';
-          if ($count == 5):
-            $result .= '</div></a>';
+          if (($count == $gallery_results->post_count) || ($count == 5)):
+            $result .= '</div>';
           endif;
         endif;
         $count++;
