@@ -106,16 +106,18 @@ function assets() {
 
   wp_register_script('sage/swiper-js', Assets\asset_path('scripts/swiper.js'), [], null, false);
   wp_register_script('sage/slick-js', Assets\asset_path('scripts/slick.js'), [], null, false);
-  if (is_archive('project')){
-      wp_enqueue_script('sage/swiper-js');
-  }
-  if (is_archive('portfolio') || is_singular('project') ){
-      wp_enqueue_script('sage/slick-js');
-  }
-  $page = isset($_GET['portfolio_item']) ? $_GET['portfolio_item'] : 0;
-  $data = array(
-    'page' => $page
-  );
-  wp_localize_script( 'sage/js', 'noahkenin', $data );
+  wp_register_script('sage/flickity-js', Assets\asset_path('scripts/flickity.js'), [], null, false);
+  //if (is_archive('project')){
+  //    wp_enqueue_script('sage/swiper-js');
+  //}
+  //if (is_archive('portfolio') || is_singular('project') ){
+  //    wp_enqueue_script('sage/slick-js');
+  //}
+  wp_enqueue_script('sage/flickity-js');
+  //$page = isset($_GET['portfolio_item']) ? $_GET['portfolio_item'] : 0;
+  //$data = array(
+  //  'page' => $page
+  //);
+  //wp_localize_script( 'sage/js', 'noahkenin', $data );
 }
 add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

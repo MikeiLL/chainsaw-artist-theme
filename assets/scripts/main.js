@@ -71,13 +71,14 @@
     }
   };
 
-  // Load Events
-  $(document).ready(UTIL.loadEvents);
-  $(".portfolio-gallery").slick({
-    infinite: true,
-    dots: true,
-    initialSlide: noahkenin.page
+  var elem = document.querySelector('.main-carousel');
+  var flkty = new Flickity( elem, {
+    // options
+    cellAlign: 'left',
+    contain: true
   });
+
+
   console.log(noahkenin.page);
 
 })(jQuery); // Fully reference jQuery after this point.

@@ -22,6 +22,11 @@
         "scripts/swiper.js"
       ]
     },
+    "flickity.js": {
+      "files": [
+        "scripts/flickity.pkgd.min.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
     },

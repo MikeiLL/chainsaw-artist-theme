@@ -7,8 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "slick-carousel": "^1.8.1"
+    "bootstrap": "^4.0.0"
   },
   "overrides": {
     "bootstrap": {

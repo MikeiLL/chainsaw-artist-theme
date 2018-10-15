@@ -104,7 +104,7 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 // Display Front Page Gallery
 function mz_noahkenin_add_frontpage_gallery() {
   $args = array(
-    'post_type' => 'portfolio'
+    'post_type' => 'project'
   );
   //var_dump(get_post_type_archive_link( 'project' ));
   //var_dump( get_intermediate_image_sizes() );
@@ -118,14 +118,14 @@ function mz_noahkenin_add_frontpage_gallery() {
         // If we don't have an image, continue, at least for now until we support video or other format.
         if ($count == 0):
           $result .= '<div class="row">';
-          $result .= '  <div class="hero-wrapper"><a href="' . get_post_type_archive_link( "portfolio" ) . '"><img class="hero__main-img" src="'. get_the_post_thumbnail_url($post->ID, 'large') . '"/></a></div>';
+          $result .= '  <div class="hero-wrapper"><a href="' . get_post_type_archive_link( "project" ) . '"><img class="hero__main-img" src="'. get_the_post_thumbnail_url($post->ID, 'large') . '"/></a></div>';
           $result .= '</div>';
         else:
           if ($count == 1):
             $result .= '<div class="hp-gallery-thumbs-wrapper row">';
           endif;
           $result .= '  <div class="hp-gallery-thumb" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ')">';
-          $result .= '    <a href="' . add_query_arg('portfolio_item', $count, get_post_type_archive_link( "portfolio" )) .'">';
+          $result .= '    <a href="' . add_query_arg('portfolio_item', $count, get_post_type_archive_link( "project" )) .'">';
           $result .= '        <div class="hp-gallery-thumb__content">';
           $result .= '          <h3 class="project-name">'. get_the_title() . '</h3>';
           $result .= '        </div>';
@@ -209,3 +209,32 @@ function mz_modify_query_only_with_image( $query ) {
 
 
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\mz_modify_query_only_with_image' );
+
+function archives_display($atts, $content){
+  $args = array(
+    'post_type' => 'project'
+  );
+  //var_dump(get_post_type_archive_link( 'project' ));
+  //var_dump( get_intermediate_image_sizes() );
+  $gallery_results = new \WP_Query($args);
+  $result = '';
+  global $post; ?>
+  <?php
+  if( $gallery_results->have_posts() ):
+
+    $result .= '<div class="carousel" data-flickity=\'{ "wrapAround": true }\'>';
+    while( $gallery_results->have_posts() ): $gallery_results->the_post();
+        $result .= '  <div class="carousel-cell" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ')">';
+        $result .= '        <div class="hp-gallery-thumb__content">';
+        $result .= '          <h3 class="project-name">'. get_the_title() . '</h3>';
+        $result .= '        </div>';
+        $result .= '  </div>';
+    endwhile;
+          $result .= '</div>';
+  endif;
+  wp_reset_postdata();
+  $result .= "</div>";
+  return $result;
+}
+add_shortcode('archives_display', __NAMESPACE__ . '\\archives_display');
+
