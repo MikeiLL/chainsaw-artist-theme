@@ -200,7 +200,14 @@ add_shortcode('large_frontpage_buttons', __NAMESPACE__ . '\\mz_noahkenin_large_f
 
 // Create a function to excplude some categories from the main query
 function mz_modify_query_only_with_image( $query ) {
-  if ((is_archive('portfolio') || is_archive('project')) && (array_key_exists('post_type', $query->query))):
+  // bail early if is in admin
+	if( is_admin() ) return;
+
+	// bail early if not main query
+	// - allows custom code / plugins to continue working
+	if( !$query->is_main_query() ) return;
+
+  if ((is_archive('project')) && (array_key_exists('post_type', $query->query))):
     if (($query->query['post_type'] === 'portfolio') || ($query->query['post_type'] === 'project')):
       $query->set( 'meta_key', '_thumbnail_id' );
     endif;
@@ -211,26 +218,43 @@ function mz_modify_query_only_with_image( $query ) {
 add_action( 'pre_get_posts', __NAMESPACE__ . '\\mz_modify_query_only_with_image' );
 
 function archives_display($atts, $content){
+
+  $atts = shortcode_atts(
+		array(
+			'type' => '',
+		), $atts, 'mz_noah_archives_display' );
+
+  $type = $atts['type'];
+
   $args = array(
     'post_type' => 'project'
   );
   //var_dump(get_post_type_archive_link( 'project' ));
   //var_dump( get_intermediate_image_sizes() );
+
+  if (!empty($atts['type'])){
+    $args['meta_query']	= array(
+      'relation'		=> 'OR',
+        array(
+          'key'		=> 'gallery_portfolio_status',
+          'value'		=> $atts['type'],
+          'compare'	=> 'LIKE'
+        )
+      );
+  }
+
   $gallery_results = new \WP_Query($args);
   $result = '';
   global $post; ?>
   <?php
-  if( $gallery_results->have_posts() ):
 
+  if( $gallery_results->have_posts() ):
     $result .= '<div class="carousel" data-flickity=\'{ "wrapAround": true }\'>';
     while( $gallery_results->have_posts() ): $gallery_results->the_post();
-        $result .= '  <div class="carousel-cell" style="background-image:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ')">';
-        $result .= '        <div class="hp-gallery-thumb__content">';
-        $result .= '          <h3 class="project-name">'. get_the_title() . '</h3>';
-        $result .= '        </div>';
-        $result .= '  </div>';
+      $result .= '  <div class="carousel-cell" style="background:url(' . get_the_post_thumbnail_url($post->ID, 'medium') . ') no-repeat center; background-size: contain">';
+      $result .= '  </div>';
     endwhile;
-          $result .= '</div>';
+    $result .= '</div>';
   endif;
   wp_reset_postdata();
   $result .= "</div>";
