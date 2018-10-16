@@ -25,7 +25,7 @@ function body_class($classes) {
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
 // Filter out projects style sheets which we don't need.
-add_filter( 'projects_enqueue_styles', false );
+add_filter( 'projects_enqueue_styles', '__return_false' );
 
 /**
  * Clean up the_excerpt()
