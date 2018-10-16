@@ -78,3 +78,8 @@ nav.navbar-expand-md {
   color: black;
 }
 
+// Feedback for Active Nav Item
+#bs4navbar .navbar-nav .active a.active {
+  color: $skyBlueLighter !important;
+}
+

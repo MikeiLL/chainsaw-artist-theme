@@ -24,7 +24,7 @@ function body_class($classes) {
 }
 add_filter('body_class', __NAMESPACE__ . '\\body_class');
 
-// Filter out projects style sheets which we don't need.
+// Filter out projects plugin style sheets which we don't need.
 add_filter( 'projects_enqueue_styles', '__return_false' );
 
 /**
@@ -40,7 +40,7 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
  * full width rows and divs.
 */
 function container_class() {
-  if ( is_front_page() || 'something' == get_post_type() ) {
+  if ( is_front_page() ) {
     return 'container-fluid';
   } else {
     return 'container';

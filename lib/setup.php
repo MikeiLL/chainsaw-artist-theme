@@ -102,9 +102,6 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-
-  wp_register_script('sage/swiper-js', Assets\asset_path('scripts/swiper.js'), [], null, false);
-  wp_register_script('sage/slick-js', Assets\asset_path('scripts/slick.js'), [], null, false);
   wp_register_script('sage/flickity-js', Assets\asset_path('scripts/flickity.js'), [], null, false);
   wp_register_script('sage/photoswipe-js', Assets\asset_path('scripts/photoswipe.js'), [], null, false);
   wp_register_script('sage/photoswipe-ui-default-js', Assets\asset_path('scripts/photoswipe-ui-default.js'), [], null, false);

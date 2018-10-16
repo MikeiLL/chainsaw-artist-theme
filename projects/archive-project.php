@@ -11,122 +11,105 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $projects_loop;
+  $args = array(
+    'post_type' => 'project'
+  );
+  //var_dump(get_post_type_archive_link( 'project' ));
+  //var_dump( get_intermediate_image_sizes() );
 
-// Store column count for displaying the grid
-if ( empty( $projects_loop['columns'] ) )
-	$projects_loop['columns'] = apply_filters( 'projects_loop_columns', 2 );
+  $gallery_results = new \WP_Query($args);
+  $result = '';
+  global $post;
+  $thumbnails = 1;
+  $type = 'archives';
 
-//get_header( 'projects' ); ?>
+  if( $gallery_results->have_posts() ):
+    $result .= '      <div class="gallery '.$type.'">';
+    while( $gallery_results->have_posts() ): $gallery_results->the_post();
+      $metadata = wp_get_attachment_metadata( get_post_thumbnail_id( $post->ID ), true );
+      $height = $metadata['height'];
+      $width = $metadata['width'];
+      $result .= '        <div class="gallery-cell single">';
+      $result .= '          <img src="' . get_the_post_thumbnail_url($post->ID, 'medium') .'"';
+      $result .= ' data-src="' . get_the_post_thumbnail_url($post->ID, 'full') .'"';
+      $result .= ' data-width="'.$width.'"';
+      $result .= ' data-height="'.$height.'"';
+      $result .= ' alt="Noah Kenin Sculpture"';
+      $result .= '>';
+      $result .= '        </div>';
+    endwhile;
+    $result .= '        </div>';
+    if ($thumbnails == 1):
+      $result .= '      <div class="gallery-nav">';
+      while( $gallery_results->have_posts() ): $gallery_results->the_post();
+        $result .= '        <div class="gallery-thumbnail">';
+        $result .= '          <img src="' . get_the_post_thumbnail_url($post->ID, 'project-thumbnail') .'"';
+        $result .= ' alt="Noah Kenin Sculpture"';
+        $result .= '>';
+        $result .= '        </div>';
+      endwhile;
+      $result .= '        </div>';
+    endif;
+  endif;
+  $result .= '<!-- Root element of PhotoSwipe. Must have class pswp. -->';
+  $result .= '<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">';
+  $result .= '    <!-- Background of PhotoSwipe. ';
+  $result .= '         It\'s a separate element as animating opacity is faster than rgba(). -->';
+  $result .= '    <div class="pswp__bg"></div>';
 
-	<?php
-		/**
-		 * projects_before_main_content hook
-		 *
-		 * @hooked projects_output_content_wrapper - 10 (outputs opening divs for the content)
-		 */
-		do_action( 'projects_before_main_content' );
-	?>
+  $result .= '    <!-- Slides wrapper with overflow:hidden. -->';
+  $result .= '    <div class="pswp__scroll-wrap">';
 
-		<?php if ( apply_filters( 'projects_show_page_title', true ) ) : ?>
+  $result .= '        <!-- Container that holds slides. ';
+  $result .= '            PhotoSwipe keeps only 3 of them in the DOM to save memory.';
+  $result .= '            Don\'t modify these 3 pswp__item elements, data is added later on. -->';
+  $result .= '        <div class="pswp__container">';
+  $result .= '            <div class="pswp__item"></div>';
+  $result .= '            <div class="pswp__item"></div>';
+  $result .= '            <div class="pswp__item"></div>';
+  $result .= '        </div>';
 
-			<h1 class="page-title"><?php projects_page_title(); ?></h1>
+  $result .= '        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->';
+  $result .= '        <div class="pswp__ui pswp__ui--hidden">';
+  $result .= '            <div class="pswp__top-bar">';
 
-		<?php endif; ?>
+  $result .= '                <!--  Controls are self-explanatory. Order can be changed. -->';
 
-		<?php do_action( 'projects_archive_description' ); ?>
-		<?php // do_action( 'projects_project_categories' ); ?>
+  $result .= '                <div class="pswp__counter"></div>';
 
-		<?php if ( have_posts() ) : ?>
+  $result .= '                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>';
 
-			<?php
-				/**
-				 * projects_before_loop hook
-				 *
-				 */
-				//do_action( 'projects_before_loop' );
-			?>
+  $result .= '                <button class="pswp__button pswp__button--share" title="Share"></button>';
 
-<div class="swiper-container gallery-top">
+  $result .= '                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>';
 
-			<?php projects_project_loop_start(); ?>
+  $result .= '                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>';
 
-				<?php while ( have_posts() ) : the_post(); ?>
+  $result .= '                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->';
+  $result .= '                <!-- element will get class pswp__preloader--active when preloader is running -->';
+  $result .= '                <div class="pswp__preloader">';
+  $result .= '                    <div class="pswp__preloader__icn">';
+  $result .= '                      <div class="pswp__preloader__cut">';
+  $result .= '                        <div class="pswp__preloader__donut"></div>';
+  $result .= '                      </div>';
+  $result .= '                    </div>';
+  $result .= '                </div>';
+  $result .= '            </div>';
 
-					<?php projects_get_template_part( 'content', 'project' ); ?>
+  $result .= '            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">';
+  $result .= '                <div class="pswp__share-tooltip"></div> ';
+  $result .= '            </div>';
 
-				<?php endwhile; // end of the loop. ?>
+  $result .= '            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">';
+  $result .= '            </button>';
 
-			<?php projects_project_loop_end(); ?>
-    <!-- Add Arrows -->
-    <div class="swiper-button-next swiper-button-white"></div>
-    <div class="swiper-button-prev swiper-button-white"></div>
-</div> <!-- End swiper wrapper -->
- <div class="swiper-container gallery-thumbs">
-    <div class="swiper-wrapper">
-      <?php while ( have_posts() ) : the_post(); ?>
-
-					<?php projects_get_template_part( 'content', 'thumb' ); ?>
-
-				<?php endwhile; // end of the loop. ?>
-
-    </div>
-  </div>
-    <script type="text/javascript">
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      slidesPerView: 10,
-      loop: true,
-      freeMode: true,
-      loopedSlides: 5, //looped slides should be the same
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-    });
-    var galleryTop = new Swiper('.gallery-top', {
-      spaceBetween: 10,
-      loop:true,
-      loopedSlides: 5, //looped slides should be the same
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      thumbs: {
-        swiper: galleryThumbs,
-      },
-      centeredSlides: true
-    });
-  </script>
-			<?php
-				/**
-				 * projects_after_loop hook
-				 *
-				 * @hooked projects_pagination - 10
-				 */
-				do_action( 'projects_after_loop' );
-			?>
-
-		<?php else : ?>
-
-			<?php projects_get_template( 'loop/no-projects-found.php' ); ?>
-
-		<?php endif; ?>
-
-	<?php
-		/**
-		 * projects_after_main_content hook
-		 *
-		 * @hooked projects_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'projects_after_main_content' );
-	?>
-
-	<?php
-		/**
-		 * projects_sidebar hook
-		 *
-		 * @hooked projects_get_sidebar - 10
-		 */
-		// do_action( 'projects_sidebar' );
-	?>
-
-<?php // get_footer( 'projects' ); ?>
+  $result .= '            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">';
+  $result .= '            </button>';
+  $result .= '            <div class="pswp__caption">';
+  $result .= '                <div class="pswp__caption__center"></div>';
+  $result .= '            </div>';
+  $result .= '        </div>';
+  $result .= '    </div>';
+  $result .= '</div>';
+  wp_reset_postdata();
+  echo $result;
