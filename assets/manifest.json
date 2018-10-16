@@ -17,26 +17,26 @@
         "scripts/customizer.js"
       ]
     },
-    "swiper.js": {
-      "files": [
-        "scripts/swiper.js"
-      ]
-    },
     "flickity.js": {
       "files": [
         "scripts/flickity.pkgd.min.js"
       ]
     },
+    "photoswipe-ui-default.js": {
+      "files": [
+        "scripts/photoswipe-ui-default.js"
+      ]
+    },
+    "photoswipe.js": {
+      "files": [
+        "scripts/photoswipe.js"
+      ]
+    },
     "jquery.js": {
       "bower": ["jquery"]
-    },
-    "slick.js": {
-      "files": [
-        "scripts/slick.js"
-      ]
     }
   },
   "config": {
-    "devUrl": "http://example.test"
+    "devUrl": "https://noah.test"
   }
 }

@@ -102,11 +102,14 @@ function assets() {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
 
   wp_register_script('sage/swiper-js', Assets\asset_path('scripts/swiper.js'), [], null, false);
   wp_register_script('sage/slick-js', Assets\asset_path('scripts/slick.js'), [], null, false);
   wp_register_script('sage/flickity-js', Assets\asset_path('scripts/flickity.js'), [], null, false);
+  wp_register_script('sage/photoswipe-js', Assets\asset_path('scripts/photoswipe.js'), [], null, false);
+  wp_register_script('sage/photoswipe-ui-default-js', Assets\asset_path('scripts/photoswipe-ui-default.js'), [], null, false);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'sage/photoswipe-ui-default-js','sage/photoswipe-js','sage/flickity-js'], null, true);
+
   //if (is_archive('project')){
   //    wp_enqueue_script('sage/swiper-js');
   //}
@@ -114,6 +117,8 @@ function assets() {
   //    wp_enqueue_script('sage/slick-js');
   //}
   wp_enqueue_script('sage/flickity-js');
+  wp_enqueue_script('sage/photoswipe-ui-default-js');
+  wp_enqueue_script('sage/photoswipe-js');
   //$page = isset($_GET['portfolio_item']) ? $_GET['portfolio_item'] : 0;
   //$data = array(
   //  'page' => $page
