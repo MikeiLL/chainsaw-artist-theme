@@ -5,7 +5,13 @@
 	display: flex;
 	flex-flow: column;
 	overflow: hidden;
-	padding: 0; 
+	padding: 0;
+}
+
+h3.biography {
+  text-align: center;
+  color: $pinkishBand;
+  margin-top: 1em;
 }
 
 	.footer__contact-wrapper {
@@ -85,4 +91,4 @@
 		flex-flow: row;
 		justify-content: space-around;
 	}
-}	
+}
