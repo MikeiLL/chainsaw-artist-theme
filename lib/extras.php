@@ -49,7 +49,6 @@ function container_class() {
 //*
 
 // Start BNS Dynamic Copyright
-if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
   function bns_dynamic_copyright( $args = '' ) {
       $initialize_values = array( 'start' => '', 'copy_years' => '', 'url' => '', 'end' => '' );
       $args = wp_parse_args( $args, $initialize_values );
@@ -98,7 +97,6 @@ if ( ! function_exists( 'bns_dynamic_copyright' ) ) {
 
       echo $output;
   }
-}
 // End BNS Dynamic Copyright
 
 add_filter('woocommerce_show_page_title', '__return_false');

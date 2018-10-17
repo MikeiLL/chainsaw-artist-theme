@@ -1,5 +1,4 @@
 <footer class="content-info footer">
-	<h3 class="biography">Noah Kenin lives in Taos, NM with his wife and daughter.</h3>
 	<div class="footer__contact-wrapper">
 	<ul class="footer__contact-list">
 		<li><a href="mailto:#" class="footer__link">
