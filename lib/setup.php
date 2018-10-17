@@ -87,6 +87,7 @@ function display_sidebar() {
     is_front_page(),
     is_page_template('template-custom.php'),
     is_archive('project'),
+    is_singular('project'),
   ]);
 
   return apply_filters('sage/display_sidebar', $display);

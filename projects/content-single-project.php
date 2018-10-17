@@ -48,7 +48,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * projects_after_single_project_description hook
 		 *
 		 */
-		do_action( 'projects_after_single_project_description' );
+		//do_action( 'projects_after_single_project_description' );
 	?>
 
 </div><!-- #project-<?php the_ID(); ?> -->
@@ -59,4 +59,4 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 *
 	 * @hooked projects_single_pagination - 10
 	 */
-	do_action( 'projects_after_single_project' );
+	//do_action( 'projects_after_single_project' );
