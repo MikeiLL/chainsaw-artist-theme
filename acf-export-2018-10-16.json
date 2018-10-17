@@ -1,0 +1,49 @@
+[
+    {
+        "key": "group_5bc4c7d550b32",
+        "title": "Archives",
+        "fields": [
+            {
+                "key": "field_5bc4c80cd9c15",
+                "label": "Gallery and Portfolio Status",
+                "name": "gallery_portfolio_status",
+                "type": "checkbox",
+                "instructions": "Select here to display in Portfolio and\/or Gallery",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "choices": {
+                    "gallery": "gallery",
+                    "portfolio": "portfolio"
+                },
+                "allow_custom": 0,
+                "default_value": [],
+                "layout": "vertical",
+                "toggle": 0,
+                "return_format": "value",
+                "save_custom": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "project"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "side",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": 1,
+        "description": ""
+    }
+]
