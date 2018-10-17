@@ -97,16 +97,19 @@ function display_sidebar() {
  * Theme assets
  */
 function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
+
+  $site_version = '1.0';
+
+  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, $site_version);
 
   if (is_single() && comments_open() && get_option('thread_comments')) {
     wp_enqueue_script('comment-reply');
   }
 
-  wp_register_script('sage/flickity-js', Assets\asset_path('scripts/flickity.js'), [], null, false);
-  wp_register_script('sage/photoswipe-js', Assets\asset_path('scripts/photoswipe.js'), [], null, false);
-  wp_register_script('sage/photoswipe-ui-default-js', Assets\asset_path('scripts/photoswipe-ui-default.js'), [], null, false);
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'sage/photoswipe-ui-default-js','sage/photoswipe-js','sage/flickity-js'], null, true);
+  wp_register_script('sage/flickity-js', Assets\asset_path('scripts/flickity.js'), [], $site_version, false);
+  wp_register_script('sage/photoswipe-js', Assets\asset_path('scripts/photoswipe.js'), [], $site_version, false);
+  wp_register_script('sage/photoswipe-ui-default-js', Assets\asset_path('scripts/photoswipe-ui-default.js'), [], $site_version, false);
+  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery', 'sage/photoswipe-ui-default-js','sage/photoswipe-js','sage/flickity-js'], $site_version, true);
 
   //if (is_archive('project')){
   //    wp_enqueue_script('sage/swiper-js');
