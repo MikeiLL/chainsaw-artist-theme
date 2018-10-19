@@ -19,6 +19,6 @@ function title() {
   } elseif (is_404()) {
     return __('Not Found', 'sage');
   } else {
-    return false; // get_the_title();
+    return get_the_title();
   }
 }
