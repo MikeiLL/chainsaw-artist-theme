@@ -1,7 +1,15 @@
+.main {
+	padding-bottom: 4rem;
+}
+
 .page-title {
 	color: $black;
 }
 
 .slick-slide > .col-md {
 	border: 2px solid red;
+}
+
+.gallery img {
+	border:1px solid $whiteTrans;
 }

@@ -32,7 +32,20 @@
 
 */
 
+body {
+    line-height: 1; /* TEMP OVERRIDE BOOTSTRPA, USE FOR TS */
+}
+
+a {
+    color: $whiteTrans;
+
+    &:hover {
+        color: $accent;
+    };
+}
+
 p {
 	font-family: 'Niramit', sans-serif;
 }
+
  

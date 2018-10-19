@@ -10,8 +10,9 @@
 
 h3.biography {
   text-align: center;
-  color: $pinkishBand;
-  margin-top: 1em;
+  color: $white;
+  margin:2em auto;
+
 }
 
 	.footer__contact-wrapper {
@@ -23,7 +24,8 @@ h3.biography {
 	.footer__contact-list {
 		display: flex;
 		flex-flow: column;
-		align-items: center;
+		//align-items: center;
+		align-items: left;
 		list-style-type: none;
 		margin: 0;
 		padding: 1.5rem 0;
@@ -36,7 +38,8 @@ h3.biography {
 
 		.footer__link {
 			color: $white;
-			font-size: 2.5rem;
+			//font-size: 2.5rem;
+			font-size: 1.2rem;
 			text-decoration: none;
 			transition: all .5s ease-out;
 		}
@@ -51,11 +54,11 @@ h3.biography {
 		}
 
 		.footer__icon-email {
-			height: 90px;
+			height: 50px;
 		}
 
 		.footer__icon-phone {
-			height: 70px;
+			height: 40px;
 		}
 
 		.footer__icon {
@@ -86,9 +89,68 @@ h3.biography {
 			margin-left: 4px;
 		}
 
-@media (min-width:992px) {
+@media (min-width: 576px) {
+	.footer__link {
+		font-size: 2rem;
+	}
+
+	.footer__icon-email {
+		height: 70px;
+	}
+
+	.footer__icon-phone {
+		height: 60px;
+	}
+}
+
+@media (min-width: 768px) {
+	.footer__link {
+		font-size: 2.5rem;
+	}
+
+	.footer__icon-email {
+		height: 90px;
+	}
+
+	.footer__icon-phone {
+		height: 80px;
+	}
+}
+
+
+@media (min-width: 992px) {
 	.footer__contact-list {
 		flex-flow: row;
 		justify-content: space-around;
+	}
+
+	.footer__contact-list li {
+		display: flex;
+		align-items: center;
+	}
+	
+	.footer__link {
+		font-size: 2rem;
+	}
+
+	.footer__icon-email {
+		height: 90px;
+	}
+
+	.footer__icon-phone {
+		height: 65px;
+	}
+}
+@media (min-width: 1200px) {
+	.footer__link {
+		font-size: 2rem;
+	}
+
+	.footer__icon-email {
+		height: 90px;
+	}
+
+	.footer__icon-phone {
+		height: 70px;
 	}
 }
