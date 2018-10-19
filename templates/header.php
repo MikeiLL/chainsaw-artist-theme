@@ -88,6 +88,9 @@
      inkscape:connector-curvature="0" />
 </svg>
 </a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+       </button>
        
        <?php
        if (has_nav_menu('primary_navigation')) :
@@ -104,9 +107,7 @@
          ]);
       endif;
        ?>
-       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
-         <span class="navbar-toggler-icon"></span>
-       </button>
+       
     </nav>
   </div>
 </header>
