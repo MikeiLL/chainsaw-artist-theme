@@ -12,8 +12,8 @@ function title() {
     } else {
       return __('Latest Posts', 'sage');
     }
-  } elseif (is_archive()) {
-    return get_the_archive_title();
+  } elseif (is_archive('project')) {
+    return '<div class="page-header"><h1>' . get_the_title((int) projects_get_page_id( "projects" )) . '</h1></div>';
   } elseif (is_search()) {
     return sprintf(__('Search Results for %s', 'sage'), get_search_query());
   } elseif (is_404()) {

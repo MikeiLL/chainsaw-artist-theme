@@ -1,4 +1,6 @@
 <?php
+use Roots\Sage\Titles;
+
 /**
  * The Template for displaying project archives, including the main showcase page which is a post type archive.
  *
@@ -22,7 +24,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
   global $post;
   $thumbnails = 1;
   $type = 'archives';
-
+  $result .= Titles\title();
   if( $gallery_results->have_posts() ):
     $result .= '      <div class="gallery '.$type.'">';
     while( $gallery_results->have_posts() ): $gallery_results->the_post();
