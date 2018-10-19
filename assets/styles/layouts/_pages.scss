@@ -1,9 +1,7 @@
-.main {
-	padding-bottom: 4rem;
-}
 
-.page-title {
-	color: $black;
+body.portfolio .main,
+body.noahs-arc .main {
+	padding-bottom: 4rem;
 }
 
 .slick-slide > .col-md {
