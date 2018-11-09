@@ -1,10 +1,28 @@
 .gallery img {
   height: 500px;
-  margin-right: 5px;
+  margin: 0 5px;
 }
 
 .single {
   min-width: 100%;
   text-align: center;
   height: 500px;
+}
+
+.gallery.portfolio img {
+  height: 400px;
+}
+
+.gallery.portfolio .single {
+  height: 400px;
+  min-width: 66%;
+}
+
+.gallery.archives img {
+  height: 300px;
+}
+
+.gallery.archives .single {
+  height: 300px;
+  min-width: 50%;
 }
